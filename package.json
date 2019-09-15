@@ -1,0 +1,22 @@
+{
+  "name": "slackbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/events-api": "^2.3.0",
+    "@slack/rtm-api": "^5.0.2",
+    "@slack/web-api": "^5.1.0",
+    "aws-sdk": "^2.528.0",
+    "axios": "^0.19.0",
+    "query-string": "^6.8.3",
+    "serverless-dynamodb-local": "^0.2.38",
+    "serverless-offline": "^5.11.0",
+    "slackbots": "^1.2.0"
+  }
+}

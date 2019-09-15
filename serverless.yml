@@ -1,0 +1,49 @@
+service: serverless-slack
+
+plugins:
+  - serverless-offline
+
+custom:
+  slack_enable_logging: true
+
+  slack_event_path: slack
+
+  slack_verification_token: "[YOUR SLACK VERIFICATION TOKEN]"
+
+  slack_client_id: "[YOUR SLACK CLIENT ID]"
+
+  slack_client_secret: "[YOUR CLIENT SECRET]"
+
+  slack_token: "[YOUR SLACK TOKEN]"
+
+  oxford_app_id: "[OXFORD APP ID]"
+
+  oxford_app_key: "[OXFORD APP KEY]"
+
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  profile: serverless
+  environment:
+    CLIENT_ID: ${self:custom.slack_client_id}
+    CLIENT_SECRET: ${self:custom.slack_client_secret}
+    VERIFICATION_TOKEN: ${self:custom.slack_verification_token}
+    ENABLE_LOGGING: ${self:custom.slack_enable_logging}
+    TOKEN: ${self:custom.slack_token}
+    OXFORD_APP_ID: ${self:custom.oxford_app_id}
+    OXFORD_APP_KEY: ${self:custom.oxford_app_key}
+
+functions:
+  index:
+    handler: src/meaning.meaning
+    events:
+      - http:
+          path: meaning
+          method: post
+          cors: true
