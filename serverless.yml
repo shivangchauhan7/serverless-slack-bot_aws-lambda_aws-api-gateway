@@ -20,6 +20,8 @@ custom:
 
   oxford_app_key: "[OXFORD APP KEY]"
 
+  openweather_api_key: "[OPEN WEATHER API KEY]"
+
   dynamodb:
     start:
       port: 8000
