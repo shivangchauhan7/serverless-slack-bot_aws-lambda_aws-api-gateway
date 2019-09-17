@@ -49,3 +49,19 @@ functions:
           path: meaning
           method: post
           cors: true
+
+  weather:
+    handler: src/weather.weather
+    events:
+      - http:
+          path: weather
+          method: post
+          cors: true
+
+  gif:
+    handler: src/gif.gif
+    events:
+      - http:
+          path: gif
+          method: post
+          cors: true
