@@ -24,6 +24,14 @@ module.exports.gif = async event => {
   let imageFile = null;
   if (text === "success") {
     imageFile = "success";
+  } else if (text === "happy") {
+    imageFile = "happy";
+  } else if (text === "sarcastic") {
+    imageFile = "sarcastic";
+  } else if (text === "angry") {
+    imageFile = "angry";
+  } else if (text === "sad") {
+    imageFile = "sad";
   }
 
   const file = fs.createReadStream(
